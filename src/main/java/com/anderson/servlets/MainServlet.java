@@ -50,15 +50,15 @@ public class MainServlet extends HttpServlet {
         String name = req.getParameter("name");
         int score = Integer.parseInt(req.getParameter("score"));
 
-        try {
-            preparedStatement.setString(1, name);
-            preparedStatement.setInt(2, score);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            preparedStatement.setString(1, name);
+//            preparedStatement.setInt(2, score);
+//            preparedStatement.executeUpdate();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
-        resp.getWriter().write("Student " + name + " " + "successfully added!");
+        resp.getWriter().write("Student " + name + " (" + score + ") successfully added!");
     }
 
     @Override
