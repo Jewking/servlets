@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>main-servlet</servlet-name>
-        <servlet-class>com.anderson.MainServlet</servlet-class>
+        <servlet-class>com.anderson.servlets.MainServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>main-servlet</servlet-name>
