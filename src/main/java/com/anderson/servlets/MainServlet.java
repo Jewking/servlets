@@ -14,8 +14,8 @@ import java.util.stream.Collectors;
 //@WebServlet(urlPatterns = "/main")
 public class MainServlet extends HttpServlet {
     private static final String url = "jdbc:postgresql://localhost:5432/students";
-    public static final String username = "postgres";
-    public static final String password = "123ASD123asd";
+    public static final String username = "test";
+    public static final String password = "123123";
 
     private static Connection connection;
     private static Statement statement;
