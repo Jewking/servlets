@@ -22,9 +22,9 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().write("Method service enter");
+        resp.getWriter().write("Method service enter\n");
         super.service(req, resp);
-        resp.getWriter().write("Method service exit");
+        resp.getWriter().write("Method service exit\nWOOOOOORK");
     }
 
     @Override
