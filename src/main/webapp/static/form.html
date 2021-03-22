@@ -7,14 +7,16 @@
 <body>
 <h1>Students</h1>
 <br/>
+<h3>Add</h3>
 <form method="post" action="/testapp/main">
-    <input name="name">
-    <input name="score">
+    <input name="name" placeholder="name">
+    <input name="score" placeholder="score">
     <button type="submit">Insert</button>
 </form>
 <br/>
-<!--<form method="post" action="/testapp/file-servlet" enctype="multipart/form-data">-->
-<!--    <button>Show all</button>-->
-<!--</form>-->
+<h3>Show list</h3>
+<form method="post" action="/testapp/main" enctype="multipart/form-data">
+    <button>Show</button>
+</form>
 </body>
 </html>

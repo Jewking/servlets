@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class MainServlet extends HttpServlet {
     private static final String url = "jdbc:postgresql://localhost:5432/students?currentSchema=public";
     public static final String username = "postgres";
-    public static final String password = "123123";
+    public static final String password = "123ASD123asd";
 
     private static Connection connection;
     private static Statement statement;
@@ -35,9 +35,9 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().write("Method service enter\n");
+//        resp.getWriter().write("Method service enter\n");
         super.service(req, resp);
-        resp.getWriter().write("Method service exit\n");
+//        resp.getWriter().write("Method service exit\n");
     }
 
     @Override
@@ -47,20 +47,18 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String params = req.getParameterMap()
-                .entrySet()
-                .stream()
-                .map(entry -> {
-                    String param = String.join(" and ", entry.getValue());
-                    return entry.getKey() + " => " + param;
-                })
-                .collect(Collectors.joining("\n"));
+        String name = req.getParameter("name");
+        int score = Integer.parseInt(req.getParameter("score"));
 
-//        Map<String, String> hs = (Map<String, String>) req.getParameterMap().e;
-//        String name = hs.get("name");
-//        int score = Integer.parseInt(hs.get("score"));
+        try {
+            preparedStatement.setString(1, name);
+            preparedStatement.setInt(2, score);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        resp.getWriter().write("Student " + params + "successfully added!");
+        resp.getWriter().write("Student " + name + " " + "successfully added!");
     }
 
     @Override
@@ -88,7 +86,7 @@ public class MainServlet extends HttpServlet {
             connection = DriverManager.getConnection(url, username, password);
             statement = connection.createStatement();
 
-//            preparedStatement = connection.prepareStatement("INSERT INTO students (name, score) VALUES (?, ?);");
+            preparedStatement = connection.prepareStatement("INSERT INTO students (name, score) VALUES (?, ?);");
 //            callableStatement = connection.prepareCall("{call editScore(?,?)}");
 
             /**
