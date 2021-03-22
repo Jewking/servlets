@@ -47,20 +47,20 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        req.getParameterMap()
-//                .entrySet()
-//                .stream()
-//                .map(entry -> {
-//                    String param = String.join(" and ", entry.getValue());
-//                    return entry.getKey() + " => " + param;
-//                })
-//                .collect(Collectors.joining("\n"));
+        String params = req.getParameterMap()
+                .entrySet()
+                .stream()
+                .map(entry -> {
+                    String param = String.join(" and ", entry.getValue());
+                    return entry.getKey() + " => " + param;
+                })
+                .collect(Collectors.joining("\n"));
 
-        Map<String, String> hs = (Map<String, String>) req.getParameterMap();
-        String name = hs.get("name");
-        int score = Integer.parseInt(hs.get("score"));
+//        Map<String, String> hs = (Map<String, String>) req.getParameterMap().e;
+//        String name = hs.get("name");
+//        int score = Integer.parseInt(hs.get("score"));
 
-        resp.getWriter().write("Student " + name + " (" + score + ") successfully added!");
+        resp.getWriter().write("Student " + params + "successfully added!");
     }
 
     @Override
