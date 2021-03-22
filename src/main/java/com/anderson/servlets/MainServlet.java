@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 //@WebServlet(urlPatterns = "/main")
 public class MainServlet extends HttpServlet {
-    private static final String url = "jdbc:postgresql://localhost:5432/students?currentSchema=public";
+    private static final String url = "jdbc:postgresql://localhost:5432/students";
     public static final String username = "postgres";
     public static final String password = "123ASD123asd";
 
@@ -26,11 +26,6 @@ public class MainServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         log("Method init");
-        try {
-            connect();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -58,6 +53,13 @@ public class MainServlet extends HttpServlet {
 //            e.printStackTrace();
 //        }
         resp.getWriter().write("Student " + name + " (" + score + ") successfully added!\n\nOTHERS STUDENTS:");
+
+        try {
+            connect();
+            resp.getWriter().write("++++++");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         try {
             ResultSet rs = statement.executeQuery("SELECT * FROM students");
