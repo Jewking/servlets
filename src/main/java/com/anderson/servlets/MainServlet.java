@@ -57,8 +57,15 @@ public class MainServlet extends HttpServlet {
 //        } catch (SQLException e) {
 //            e.printStackTrace();
 //        }
+        resp.getWriter().write("Student " + name + " (" + score + ") successfully added!\n\nOTHERS STUDENTS:");
 
-        resp.getWriter().write("Student " + name + " (" + score + ") successfully added!");
+        try {
+            ResultSet rs = statement.executeQuery("SELECT * FROM students");
+            while (rs.next()) {
+                resp.getWriter().write("id: " + rs.getInt("id") + ", name: " + rs.getString("name") + ", score: " + rs.getInt("score") + "\n");
+            }
+        } catch (SQLException e) {
+        }
     }
 
     @Override
@@ -84,8 +91,8 @@ public class MainServlet extends HttpServlet {
 
         try {
             connection = DriverManager.getConnection(url, username, password);
-            statement = connection.createStatement();
 
+            statement = connection.createStatement();
             preparedStatement = connection.prepareStatement("INSERT INTO students (name, score) VALUES (?, ?);");
 //            callableStatement = connection.prepareCall("{call editScore(?,?)}");
 
