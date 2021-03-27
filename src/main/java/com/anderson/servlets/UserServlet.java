@@ -22,24 +22,25 @@ public class UserServlet extends HttpServlet {
 //    private static PreparedStatement preparedStatement;
 //    private static CallableStatement callableStatement;
 //
+//    public static void main(String[] args) {
 
+//    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String SELECT_ALL = "SELECT * from users";
-
         List<UserModel> users = new ArrayList<>();
-        try (Connection connection = DBConnection.getConnection(); PreparedStatement ps = connection.prepareStatement(SELECT_ALL)) {
+        try (Connection connection = DBConnection.getConnection(); PreparedStatement ps = connection.prepareStatement("SELECT * from users")) {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
                 Long id = rs.getLong("id");
-                String name = rs.getString("login");
-                int age = rs.getInt("password");
-                boolean status = rs.getBoolean("role");
+                String name = rs.getString("name");
+                int age = rs.getInt("age");
+                boolean status = rs.getBoolean("status");
                 users.add(new UserModel(name, age, status));
             }
         } catch (SQLException e) {
+            e.printStackTrace();
         }
 
         req.setAttribute("users", users);
