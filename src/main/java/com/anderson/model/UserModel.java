@@ -1,6 +1,7 @@
 package com.anderson.model;
 
 public class UserModel {
+    private Long id;
     private String name;
     private int age;
     private boolean status;
@@ -33,5 +34,13 @@ public class UserModel {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
