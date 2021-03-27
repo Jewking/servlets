@@ -86,7 +86,7 @@ table.table td a.view {
     color: #03A9F4;
 }
 table.table td a.edit {
-    color: #FFC107;
+    color: #0062cc;
 }
 table.table td a.delete {
     color: #E34724;
@@ -183,8 +183,15 @@ $(document).ready(function(){
                                 </c:otherwise>
                             </c:choose>
                         </td>
-                        <td>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+
+                        <td><c:choose>
+                                <c:when test="${user.getStatus() == true}">
+                                    <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a>
+                                </c:when>
+                                <c:otherwise>
+                                    <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a>
+                                </c:otherwise>
+                            </c:choose>
                             <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                         </td>
                     </tr>
