@@ -5,7 +5,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class DBCPDataSource {
+public class DBConnection {
 
     private static BasicDataSource ds = new BasicDataSource();
 
@@ -24,5 +24,5 @@ public class DBCPDataSource {
         return ds.getConnection();
     }
 
-    private DBCPDataSource(){ }
+    private DBConnection(){ }
 }

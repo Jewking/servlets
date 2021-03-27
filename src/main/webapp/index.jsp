@@ -197,11 +197,11 @@ $(document).ready(function(){
 
                         <td><c:choose>
                                 <c:when test="${user.getStatus() == true}">
-                                    <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a>
-                                    <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                    <button type="submit" class="btn"><a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a></button>
+                                    <button type="submit" class="btn"><a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></button>
                                 </c:when>
                                 <c:otherwise>
-                                    <a href="#" class="return" title="Return" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a>
+                                    <button type="submit" class="btn"><a href="#" class="return" title="Return" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a></button>
                                 </c:otherwise>
                             </c:choose>
                         </td>
@@ -214,7 +214,7 @@ $(document).ready(function(){
                         <td><input name="age" required type="text" class="form-control" placeholder="Age&hellip;"></td>
                         <td><a href="javascript:{}" onclick="document.getElementById('add_new').submit(); return false;" class="create submit" title="Create" data-toggle="tooltip"></a></td>
                         <td>
-                            <button type="submit" name="myButton" class="btn" value="foo"><a href="" class="create" title="" data-toggle="tooltip" data-original-title="Create"><i class="material-icons">person_add</i></a></button>
+                            <button type="submit" class="btn"><a href="" class="create" data-toggle="tooltip" data-original-title="Create"><i class="material-icons">person_add</i></a></button>
                         </td>
                     <form
                     </tr>
