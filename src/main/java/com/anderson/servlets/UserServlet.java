@@ -38,7 +38,7 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
-        int age = Integer.parseInt(req.getParameter("score"));
+        int age = Integer.parseInt(req.getParameter("age"));
 
         ArrayList<User> users = new ArrayList<User> (Arrays.asList(
                 new User("John First", 15, true),
