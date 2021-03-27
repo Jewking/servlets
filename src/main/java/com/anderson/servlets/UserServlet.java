@@ -31,7 +31,7 @@ public class UserServlet extends HttpServlet {
                 new User("Bob Second", 25, "Active"),
                 new User("Martin Third", 19, "Active")
         ));
-        req.setAttribute("users", users);git
+        req.setAttribute("users", users);
         getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 }
