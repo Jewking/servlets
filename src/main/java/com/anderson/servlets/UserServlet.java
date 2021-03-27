@@ -27,9 +27,9 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ArrayList<User> users = new ArrayList<User> (Arrays.asList(
-                new User("John First", 15, "Active"),
-                new User("Bob Second", 25, "Active"),
-                new User("Martin Third", 19, "Active")
+                new User("John First", 15, true),
+                new User("Bob Second", 25, false),
+                new User("Martin Third", 19, true)
         ));
         req.setAttribute("users", users);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);

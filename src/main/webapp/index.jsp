@@ -171,10 +171,15 @@ $(document).ready(function(){
                 <tbody>
                 <c:forEach var="user" items="${users}" step="1" varStatus="count">
                     <tr>
-                        <td>${count.step}</td>
+                        <td>${count.count}</td>
                         <td>${user.getName()}</td>
                         <td>${user.getAge()}</td>
-                        <td>${user.getStatus()}</td>
+                        <td><% if (user.getStatus()) { %>
+                            <span class="badge badge-success">Active</span>
+                        <% } else { %>
+                            <span class="label label-danger">Removed</span>
+                        <% } %>
+                        </td>
                         <td>
                             <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                             <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
@@ -187,14 +192,14 @@ $(document).ready(function(){
                         <td><input type="text" class="form-control" placeholder="Age&hellip;"></td>
                         <td><input type="text" class="form-control" placeholder="Status&hellip;"></td>
                         <td>
-                            <a href="#" class="create" title="Create" data-toggle="tooltip"><i class="material-icons">group_add</i></a>
+                            <a href="#" class="create" title="Create" data-toggle="tooltip"><i class="material-icons">person_add</i></a>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <div class="clearfix">
-                <div class="hint-text">by <b>Leonid Rakitin</b></div>
-                <ul class="pagination"><i>Based on Google Cloud</i> <i class="material-icons">filter_drama</i></ul>
+                <i class="material-icons">filter_drama</i> <i>Based on Google Cloud</i>
+                <ul class="pagination"><div class="hint-text">by <b>Leonid Rakitin</b></div></ul>
             </div>
         </div>
     </div>
