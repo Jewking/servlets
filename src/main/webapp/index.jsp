@@ -163,7 +163,7 @@ $(document).ready(function(){
                     <tr>
                         <th>#</th>
                         <th>Name <i class="fa fa-sort"></i></th>
-                        <th>Age</th>
+                        <th>Age <i class="fa fa-sort"></i></th>
                         <th>Status <i class="fa fa-sort"></i></th>
                         <th>Actions</th>
                     </tr>
@@ -179,7 +179,7 @@ $(document).ready(function(){
                                     <span class="badge badge-success">Active</span>
                                 </c:when>
                                 <c:otherwise>
-                                    <span class="label label-danger">Removed</span>
+                                    <span class="badge badge-danger">Removed</span>
                                 </c:otherwise>
                             </c:choose>
                         </td>
