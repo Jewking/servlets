@@ -37,8 +37,6 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("users", users);
-
         String name = req.getParameter("name");
         if (name == null) {
             req.setAttribute("error", "Incorrect name!");
@@ -54,6 +52,7 @@ public class UserServlet extends HttpServlet {
                     new User("Martin Third", 19, true),
                     new User(name, 21, true)
             ));
+            req.setAttribute("users", users);
             req.getRequestDispatcher("/index.jsp").forward(req, resp);
         }
     }
