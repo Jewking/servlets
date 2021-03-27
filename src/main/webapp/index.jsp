@@ -86,7 +86,7 @@ table.table td a.view {
     color: #03A9F4;
 }
 table.table td a.edit {
-    color: #000000;
+    color: #0062cc;
 }
 table.table td a.delete {
     color: #E34724;
@@ -95,7 +95,7 @@ table.table td a.create {
     color: #1c9036;
 }
 table.table td a.return {
-    color: #ffb100;
+    color: #000000;
 }
 table.table td i {
     font-size: 20px;

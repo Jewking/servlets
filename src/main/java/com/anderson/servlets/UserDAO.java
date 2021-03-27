@@ -1,5 +1,7 @@
 package com.anderson.servlets;
 
-public class UserDAO extends Database {
+import com.anderson.servlets.connection.BasicConnection;
+
+public class UserDAO extends BasicConnection {
 
 }
