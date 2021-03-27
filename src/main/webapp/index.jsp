@@ -214,7 +214,7 @@ $(document).ready(function(){
                         <td><input name="age" type="text" class="form-control" placeholder="Age&hellip;"></td>
                         <td></td>
                         <td>
-                            <button type="submit" class="create" title="Create" data-toggle="tooltip"><i class="material-icons">person_add</i> Add</a>
+                            <a href="#" class="create submit" title="Create" data-toggle="tooltip"><i class="material-icons">person_add</i></a>
                         </td>
                     <form
                     </tr>
