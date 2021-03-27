@@ -37,9 +37,6 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
-//        int age = Integer.parseInt(req.getParameter("age"));
-
         ArrayList<User> users = new ArrayList<User> (Arrays.asList(
                 new User("John First", 15, true),
                 new User("Bob Second", 25, false),
@@ -48,7 +45,19 @@ public class UserServlet extends HttpServlet {
         ));
 
         req.setAttribute("users", users);
-        req.getRequestDispatcher("/index.jsp").forward(req, resp);
+
+
+        String name = req.getParameter("name");
+        if (name == null) {
+            req.setAttribute("error", "Incorrect name!");
+        }
+        try {
+            int age = Integer.parseInt(req.getParameter("age"));
+        } catch (Exception e) {
+            req.setAttribute("error", "Incorrect age!");
+        } finally {
+            req.getRequestDispatcher("/index.jsp").forward(req, resp);
+        }
     }
 }
 

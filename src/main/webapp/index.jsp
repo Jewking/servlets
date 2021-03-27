@@ -166,9 +166,8 @@ $(document).ready(function(){
                     </div>
                 </div>
             </div>
-
-            <i class="material-icons">error</i> <span class="error">ERROR: text</span>
             <c:if test="${not empty error}">
+                <span class="error"><i class="material-icons">error_outline</i> ERROR: ${error}!</span>
             </c:if>
             <table class="table table-striped table-hover table-bordered">
                 <thead>
