@@ -46,7 +46,6 @@ body {
 }
 .search-box input {
     height: 34px;
-    border-radius: 20px;
     padding-left: 35px;
     border-color: #ddd;
     box-shadow: none;
@@ -148,6 +147,7 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-sm-8"><h2>Home <b>Work</b></h2></div>
                     <div class="col-sm-4">
+                        <i class="material-icons">filter_drama</i>
                         <div class="search-box">
                             <i class="material-icons">&#xE8B6;</i>
                             <input type="text" class="form-control" placeholder="Search&hellip;">
@@ -168,7 +168,7 @@ $(document).ready(function(){
                 <tbody>
                 <c:forEach var="user" items="${users}" step="1" varStatus="count">
                     <tr>
-                        <td>${count.index}</td>
+                        <td>${count.step}</td>
                         <td>${user.getName()}</td>
                         <td>${user.getAge()}</td>
                         <td>${user.getStatus()}</td>
@@ -178,8 +178,18 @@ $(document).ready(function(){
                         </td>
                     </tr>
                 </c:forEach>
+                    <tr>
+                        <td>#</td>
+                        <td><input type="text" class="form-control" placeholder="Name&hellip;"></td>
+                        <td><input type="text" class="form-control" placeholder="Age&hellip;"></td>
+                        <td><input type="text" class="form-control" placeholder="Status&hellip;"></td>
+                        <td>
+                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">group_add</i></a>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
+            <p><i class="material-icons">filter_drama</i> Based on Google Cloud</p>
         </div>
     </div>
 </div>
