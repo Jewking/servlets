@@ -168,9 +168,9 @@ $(document).ready(function(){
                 <c:forEach var="user" items="${users}">
                     <tr>
                         <td>1</td>
-                        <td>${user.getName()}</td>
-                        <td>${user.getAge()}</td>
-                        <td>${user.getStatus()}</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
                         <td>
                             <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
                             <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
