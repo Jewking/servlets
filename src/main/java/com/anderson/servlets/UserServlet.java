@@ -38,13 +38,13 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
-        int age = Integer.parseInt(req.getParameter("age"));
+//        int age = Integer.parseInt(req.getParameter("age"));
 
         ArrayList<User> users = new ArrayList<User> (Arrays.asList(
                 new User("John First", 15, true),
                 new User("Bob Second", 25, false),
                 new User("Martin Third", 19, true),
-                new User(name, age, true)
+                new User(name, 21, true)
         ));
 
         req.setAttribute("users", users);
