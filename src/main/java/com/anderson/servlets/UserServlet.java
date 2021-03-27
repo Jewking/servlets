@@ -40,7 +40,7 @@ public class UserServlet extends HttpServlet {
         ArrayList<User> users = new ArrayList<User> (Arrays.asList(
                     new User("John First", 15, true),
                     new User("Bob Second", 25, false),
-                    new User("Martin Third", 19, true),
+                    new User("Martin Third", 19, true)
                 ));
 
         String name = req.getParameter("name");
