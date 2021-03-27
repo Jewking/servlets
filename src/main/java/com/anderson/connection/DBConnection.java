@@ -12,14 +12,14 @@ public class DBConnection {
 
     static {
         config.setDriverClassName("org.postgresql.Driver");
-        config.setJdbcUrl("jdbc:postgresql://35.228.142.234:3306/users");
+        config.setJdbcUrl("jdbc:postgresql://35.228.142.234:3306/users?cloudSqlInstance=learned-dahlia-308914:europe-north1:anderson;socketFactory=com.google.cloud.sql.mysql.SocketFactory\"");
         config.setUsername("postgres");
         config.setPassword("123123");
 //        config.addDataSourceProperty("cachePrepStmts", "true");
 //        config.addDataSourceProperty("prepStmtCacheSize", "250");
 //        config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-        config.addDataSourceProperty("socketFactory", "com.google.cloud.sql.postgres.SocketFactory");
-        config.addDataSourceProperty("cloudSqlInstance", "anderson");
+//        config.addDataSourceProperty("socketFactory", "com.google.cloud.sql.postgres.SocketFactory");
+////        config.addDataSourceProperty("cloudSqlInstance", "anderson");
         config.addDataSourceProperty("ipTypes", "PUBLIC,PRIVATE");
         ds = new HikariDataSource(config);
     }
