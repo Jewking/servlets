@@ -86,7 +86,7 @@ table.table td a.view {
     color: #03A9F4;
 }
 table.table td a.edit {
-    color: #0062cc;
+    color: #000000;
 }
 table.table td a.delete {
     color: #E34724;
