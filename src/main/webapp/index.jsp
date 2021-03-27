@@ -214,6 +214,7 @@ $(document).ready(function(){
                         <td><input name="age" required type="text" class="form-control" placeholder="Age&hellip;"></td>
                         <td></td>
                         <td>
+                            <button type="submit" name="myButton" value="foo">Click me</button>
                             <a href="javascript:{}" onclick="document.getElementById('add_new').submit(); return false;" class="create submit" title="Create" data-toggle="tooltip"><i class="material-icons">person_add</i></a>
                         </td>
                     <form
