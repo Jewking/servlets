@@ -25,14 +25,14 @@ public class UserServlet extends HttpServlet {
 
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ArrayList<User> users = new ArrayList<User> (Arrays.asList(
                 new User("John First", 15, "Active"),
                 new User("Bob Second", 25, "Active"),
                 new User("Martin Third", 19, "Active")
         ));
-        req.setAttribute("users", users);
-        getServletContext().getRequestDispatcher("/testapp/index.jsp");
+        req.setAttribute("users", users);git
+        getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 }
 
