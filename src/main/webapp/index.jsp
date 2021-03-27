@@ -168,7 +168,7 @@ $(document).ready(function(){
                 <tbody>
                 <c:forEach var="user" items="${users}">
                     <tr>
-                        <td>${user.getName}</td>
+                        <td>${user.getName()}</td>
                         <td>2</td>
                         <td>3</td>
                         <td>4</td>
