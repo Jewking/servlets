@@ -18,7 +18,7 @@ public class DBConnection {
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-        config.addDataSourceProperty("socketFactory", "com.google.cloud.sql.postgres.SocketFactory");
+//        config.addDataSourceProperty("socketFactory", "com.google.cloud.sql.postgres.SocketFactory");
         config.addDataSourceProperty("cloudSqlInstance", "anderson");
         config.addDataSourceProperty("ipTypes", "PUBLIC,PRIVATE");
         ds = new HikariDataSource(config);
