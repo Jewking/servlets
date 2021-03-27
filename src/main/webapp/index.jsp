@@ -166,12 +166,12 @@ $(document).ready(function(){
                     </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="user" items="${users}">
+                <c:forEach var="user" items="${users}" step="1" varStatus="count">
                     <tr>
+                        <td>${count.index}</td>
                         <td>${user.getName()}</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
+                        <td>${user.getAge()}</td>
+                        <td>${user.getStatus()}</td>
                         <td>
                             <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                             <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
