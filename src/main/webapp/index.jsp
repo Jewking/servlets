@@ -137,6 +137,9 @@ table.table td i {
     margin-top: 6px;
     font-size: 95%;
 }
+.error {
+  color: red;
+}
 </style>
 <script>
 $(document).ready(function(){
@@ -145,7 +148,10 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<% List<User> users = (List) request.getAttribute("users"); %>
+<%
+    List<User> users = (List) request.getAttribute("users");
+    String error = (String) request.getAttribute("error");
+%>
 <div class="container-xl">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -160,6 +166,10 @@ $(document).ready(function(){
                     </div>
                 </div>
             </div>
+
+            <i class="material-icons">error</i> <span class="error">ERROR: text</span>
+            <c:if test="${not empty error}">
+            </c:if>
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                     <tr>
@@ -201,11 +211,11 @@ $(document).ready(function(){
                     <tr>
                     <form method="post" action="/testapp/main">
                         <td>#</td>
-                        <td><input name= "name" type="text" class="form-control" placeholder="Name&hellip;"></td>
-                        <td><input name= "age" type="text" class="form-control" placeholder="Age&hellip;"></td>
+                        <td><input name="name" type="text" class="form-control" placeholder="Name&hellip;"></td>
+                        <td><input name="age" type="text" class="form-control" placeholder="Age&hellip;"></td>
                         <td></td>
                         <td>
-                            <button type="submit" class="create" title="Create" data-toggle="tooltip"><i class="material-icons">person_add</i></a>
+                            <button type="submit" class="create" title="Create" data-toggle="tooltip"><i class="material-icons">person_add</i> Add</a>
                         </td>
                     <form
                     </tr>
