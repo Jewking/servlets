@@ -145,7 +145,7 @@ $(document).ready(function(){
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><h2>Customer <b>Details</b></h2></div>
+                    <div class="col-sm-8"><h2>Home <b>Work</b></h2></div>
                     <div class="col-sm-4">
                         <div class="search-box">
                             <i class="material-icons">&#xE8B6;</i>
@@ -167,9 +167,9 @@ $(document).ready(function(){
                     </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="user" items="${users}" step="1" varStatus="count">
+                <c:forEach var="user" items="${users}">
                     <tr>
-                        <td>${count}</td>
+                        <td>1</td>
                         <td>${user.getName()}</td>
                         <td>${user.getAge()}</td>
                         <td>${user.getStatus()}</td>
