@@ -174,11 +174,14 @@ $(document).ready(function(){
                         <td>${count.count}</td>
                         <td>${user.getName()}</td>
                         <td>${user.getAge()}</td>
-                        <td><% if (user.getStatus()) { %>
-                            <span class="badge badge-success">Active</span>
-                        <% } else { %>
-                            <span class="label label-danger">Removed</span>
-                        <% } %>
+                        <td><c:choose>
+                                <c:when test="${user.getStatus() == true}">
+                                    <span class="badge badge-success">Active</span>
+                                </c:when>
+                                <c:otherwise>
+                                    <span class="label label-danger">Removed</span>
+                                </c:otherwise>
+                            </c:choose>
                         </td>
                         <td>
                             <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
