@@ -167,7 +167,7 @@ $(document).ready(function(){
                     </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="user" items="${users}" varStatus="count">
+                <c:forEach var="user" items="${users}" step="1" varStatus="count">
                     <tr>
                         <td>${count}</td>
                         <td>${user.getName()}</td>
