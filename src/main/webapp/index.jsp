@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bootstrap Simple Data Table</title>
+<title>HomeWork</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -167,7 +167,7 @@ $(document).ready(function(){
                 <tbody>
                 <c:forEach var="user" items="${users}">
                     <tr>
-                        <td>1</td>
+                        <td><c:out value="${user.getName}" /></td>
                         <td>2</td>
                         <td>3</td>
                         <td>4</td>
