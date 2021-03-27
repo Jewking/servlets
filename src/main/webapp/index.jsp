@@ -93,7 +93,9 @@ table.table td a.delete {
 }
 table.table td a.create {
     color: #1c9036;
-    font-size: 24px;
+}
+table.table td a.return {
+    color: #ffb100;
 }
 table.table td i {
     font-size: 20px;
@@ -187,12 +189,12 @@ $(document).ready(function(){
                         <td><c:choose>
                                 <c:when test="${user.getStatus() == true}">
                                     <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a>
+                                    <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                                 </c:when>
                                 <c:otherwise>
-                                    <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a>
+                                    <a href="#" class="return" title="Return" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a>
                                 </c:otherwise>
                             </c:choose>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                         </td>
                     </tr>
                 </c:forEach>
