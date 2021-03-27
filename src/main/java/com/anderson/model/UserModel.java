@@ -1,11 +1,11 @@
-package com.anderson.servlets;
+package com.anderson.model;
 
-public class User {
+public class UserModel {
     private String name;
     private int age;
     private boolean status;
 
-    public User(String name, int age, boolean status) {
+    public UserModel(String name, int age, boolean status) {
         this.name = name;
         this.age = age;
         this.status = status;

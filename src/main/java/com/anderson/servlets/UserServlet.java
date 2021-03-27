@@ -1,17 +1,14 @@
 package com.anderson.servlets;
 
+import com.anderson.model.UserModel;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 //@WebServlet(urlPatterns = "/main")
 public class UserServlet extends HttpServlet {
@@ -26,10 +23,10 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ArrayList<User> users = new ArrayList<User> (Arrays.asList(
-                new User("John First", 15, true),
-                new User("Bob Second", 25, false),
-                new User("Martin Third", 19, true)
+        ArrayList<UserModel> users = new ArrayList<UserModel> (Arrays.asList(
+                new UserModel("John First", 15, true),
+                new UserModel("Bob Second", 25, false),
+                new UserModel("Martin Third", 19, true)
         ));
         req.setAttribute("users", users);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
@@ -37,10 +34,10 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ArrayList<User> users = new ArrayList<User> (Arrays.asList(
-                    new User("John First", 15, true),
-                    new User("Bob Second", 25, false),
-                    new User("Martin Third", 19, true)
+        ArrayList<UserModel> users = new ArrayList<UserModel> (Arrays.asList(
+                    new UserModel("John First", 15, true),
+                    new UserModel("Bob Second", 25, false),
+                    new UserModel("Martin Third", 19, true)
                 ));
 
         String name = req.getParameter("name");
@@ -53,7 +50,7 @@ public class UserServlet extends HttpServlet {
         int age = 0;
         try {
             age = Integer.parseInt(req.getParameter("age"));
-            users.add(new User(name, age, true));
+            users.add(new UserModel(name, age, true));
         } catch (Exception e) {
             req.setAttribute("error", "Incorrect age!");
         } finally {

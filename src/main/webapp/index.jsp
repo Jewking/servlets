@@ -210,8 +210,8 @@ $(document).ready(function(){
                     <tr>
                     <form id="add_new" method="post" action="/testapp/main">
                         <td>#</td>
-                        <td><input name="name" type="text" class="form-control" placeholder="Name&hellip;"></td>
-                        <td><input name="age" type="text" class="form-control" placeholder="Age&hellip;"></td>
+                        <td><input name="name" required type="text" class="form-control" placeholder="Name&hellip;"></td>
+                        <td><input name="age" required type="text" class="form-control" placeholder="Age&hellip;"></td>
                         <td></td>
                         <td>
                             <a href="javascript:{}" onclick="document.getElementById('add_new').submit(); return false;" class="create submit" title="Create" data-toggle="tooltip"><i class="material-icons">person_add</i></a>
