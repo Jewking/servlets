@@ -12,7 +12,7 @@ public class DBConnection {
 
     static {
         config.setDriverClassName("org.postgresql.Driver");
-        config.setJdbcUrl("jdbc:postgresql://35.228.142.234:3306/study");
+        config.setJdbcUrl("jdbc:postgresql://35.228.142.234:3306/users");
         config.setUsername("postgres");
         config.setPassword("123123");
         config.addDataSourceProperty("cachePrepStmts", "true");
