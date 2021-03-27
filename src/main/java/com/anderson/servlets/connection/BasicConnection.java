@@ -6,9 +6,9 @@
 //import java.util.List;
 //
 //public class BasicConnection implements ConnectionPool {
-//    private String url = "jdbc:postgresql://localhost:5432/students";;
-//    private String user;
-//    private String password;
+//    private String url = "jdbc:postgresql://35.228.142.234:3306/study";;
+//    private String user = "postgres";
+//    private String password = "123123";
 //
 //    private List<Connection> connectionPool;
 //    private List<Connection> usedConnections = new ArrayList<>();
