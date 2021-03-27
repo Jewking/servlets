@@ -34,6 +34,22 @@ public class UserServlet extends HttpServlet {
         req.setAttribute("users", users);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
+        int age = Integer.parseInt(req.getParameter("score"));
+
+        ArrayList<User> users = new ArrayList<User> (Arrays.asList(
+                new User("John First", 15, true),
+                new User("Bob Second", 25, false),
+                new User("Martin Third", 19, true),
+                new User(name, age, true)
+        ));
+
+        req.setAttribute("users", users);
+        req.getRequestDispatcher("/index.jsp").forward(req, resp);
+    }
 }
 
 //        String name = req.getParameter("name");

@@ -199,13 +199,15 @@ $(document).ready(function(){
                     </tr>
                 </c:forEach>
                     <tr>
+                    <form method="post" action="/testapp/main">
                         <td>#</td>
-                        <td><input type="text" class="form-control" placeholder="Name&hellip;"></td>
-                        <td><input type="text" class="form-control" placeholder="Age&hellip;"></td>
-                        <td><input type="text" class="form-control" placeholder="Status&hellip;"></td>
+                        <td><input name= "name" type="text" class="form-control" placeholder="Name&hellip;"></td>
+                        <td><input name= "age" type="text" class="form-control" placeholder="Age&hellip;"></td>
+                        <td></td>
                         <td>
-                            <a href="#" class="create" title="Create" data-toggle="tooltip"><i class="material-icons">person_add</i></a>
+                            <button type="submit" class="create" title="Create" data-toggle="tooltip"><i class="material-icons">person_add</i></a>
                         </td>
+                    <form
                     </tr>
                 </tbody>
             </table>
