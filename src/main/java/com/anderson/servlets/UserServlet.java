@@ -32,7 +32,7 @@ public class UserServlet extends HttpServlet {
                 new User("Martin Third", 19, "Active")
         ));
         req.setAttribute("users", users);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 }
 
