@@ -179,6 +179,7 @@ $(document).ready(function(){
                         <th>Name <i class="fa fa-sort"></i></th>
                         <th>Age <i class="fa fa-sort"></i></th>
                         <th>Status <i class="fa fa-sort"></i></th>
+                        <th>ID <i class="fa fa-sort"></i></th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -197,7 +198,7 @@ $(document).ready(function(){
                                 </c:otherwise>
                             </c:choose>
                         </td>
-
+                        <td>${user.getId()}</td>
                         <td><c:choose>
                                 <c:when test="${user.getStatus() == true}">
                                     <form id="go_edit" method="get" action="">
@@ -220,7 +221,8 @@ $(document).ready(function(){
                         <td>#</td>
                         <td><input name="name" required minlength="2" maxlength="24" type="text" class="form-control" placeholder="Name&hellip;"></td>
                         <td><input name="age" required type="number" min="15" max="55" class="form-control" placeholder="Age&hellip;"></td>
-                        <td><a href="javascript:{}" onclick="document.getElementById('add_new').submit(); return false;" class="create submit" title="Create" data-toggle="tooltip"></a></td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <button name="command" value="Add" type="submit" class="btn"><a href="" class="create" data-toggle="tooltip" data-original-title="Create"><i class="material-icons">person_add</i></a></button>
                         </td>
