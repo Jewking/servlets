@@ -24,21 +24,12 @@ public class UserServlet extends HttpServlet {
 //    private static CallableStatement callableStatement;
 //
 //    public static void main(String[] args) {
-//        List<UserModel> users = new ArrayList<>();
-//        try (Connection connection = DBConnection.getConnection(); PreparedStatement ps = connection.prepareStatement("SELECT * from users")) {
-//            ResultSet rs = ps.executeQuery();
-//
-//            while (rs.next()) {
-//                Long id = rs.getLong("id");
-//                String name = rs.getString("name");
-//                int age = rs.getInt("age");
-//                boolean status = rs.getBoolean("status");
-//                users.add(new UserModel(name, age, status));
-//            }
-//            System.out.println(users.toString());
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+//        String name = "Koin";
+//        String strAge = "27";
+//        int age = Integer.parseInt(strAge);
+//        UserDAO.insert(new UserModel(name, age, true));
+//        List<UserModel> users = UserDAO.selectAll();
+//        System.out.println(users.toString());
 //    }
 
     @Override
@@ -53,11 +44,11 @@ public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = (String) req.getParameter("name");
         String strAge = (String) req.getParameter("age");
-
-        req.setAttribute("error", req.getParameter("age"));
         int age = Integer.parseInt(strAge);
-        UserDAO.insert(new UserModel(name, age, true));
 
+        req.setAttribute("error", req.getParameter("Age = "+String.valueOf(age)));
+
+        UserDAO.insert(new UserModel(name, age, true));
         List<UserModel> users = UserDAO.selectAll();
         req.setAttribute("users", users);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
