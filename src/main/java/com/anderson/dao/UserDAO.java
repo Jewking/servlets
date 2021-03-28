@@ -70,11 +70,10 @@ public class UserDAO {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                Long userId = rs.getLong("id");
                 String name = rs.getString("name");
                 int age = rs.getInt("age");
                 boolean status = rs.getBoolean("status");
-                listUsers.add(new UserModel(userId, name, age, status));
+                listUsers.add(new UserModel(name, age, status));
             }
         } catch (SQLException e) {
             e.printStackTrace();

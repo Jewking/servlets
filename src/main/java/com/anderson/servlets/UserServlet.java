@@ -23,14 +23,11 @@
 ////    private static PreparedStatement preparedStatement;
 ////    private static CallableStatement callableStatement;
 ////
-////    public static void main(String[] args) {
-////        String name = "Koin";
-////        String strAge = "27";
-////        int age = Integer.parseInt(strAge);
-////        UserDAO.insert(new UserModel(name, age, true));
-////        List<UserModel> users = UserDAO.selectAll();
-////        System.out.println(users.toString());
-////    }
+//    public static void main(String[] args) {
+//        String name = "Harry";
+//        List<UserModel> users = UserDAO.search(name);
+//        System.out.println(users.toString());
+//    }
 //
 //    @Override
 //    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
