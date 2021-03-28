@@ -157,7 +157,7 @@ $(document).ready(function(){
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><a href="/testapp/main?command=Index"><h2>Home <b>Work</b></h2></a></div>
+                    <div class="col-sm-8"><a href="/testapp/main?command=Index"><h2>Home <b>page</b></h2></a></div>
                     <div class="col-sm-4">
                         <form id="add_new" method="get" action="">
                         <div class="search-box">
@@ -214,7 +214,7 @@ $(document).ready(function(){
                 </tbody>
             </table>
             <div class="clearfix">
-                <i class="material-icons">filter_drama</i> <i>Based on Google Cloud</i>
+                <a href="/api/users" class="link hint-text"><i class="material-icons">rss_feed</i> USER <b>API</b></a>
                 <ul class="pagination"><div class="hint-text">by <b>Leonid Rakitin</b></div></ul>
             </div>
         </div>

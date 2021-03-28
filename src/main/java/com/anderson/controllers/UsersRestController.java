@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("testapp/api")
 class UsersRestController {
     @GetMapping("users")
     public List<UserModel> listUsers () {
