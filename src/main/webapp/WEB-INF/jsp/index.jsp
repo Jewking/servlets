@@ -60,6 +60,9 @@ body {
     top: 8px;
     left: 10px;
 }
+.link {
+    color : #566787;
+}
 table.table tr th, table.table tr td {
     border-color: #e9e9e9;
 }
@@ -231,7 +234,7 @@ $(document).ready(function(){
                 </tbody>
             </table>
             <div class="clearfix">
-                <i class="material-icons">filter_drama</i> <i>Based on Google Cloud</i>
+                <a href="/api/users" class="link hint-text"><i class="material-icons">rss_feed</i> USER <b>API</b></a>
                 <ul class="pagination"><div class="hint-text">by <b>Leonid Rakitin</b></div></ul>
             </div>
         </div>
