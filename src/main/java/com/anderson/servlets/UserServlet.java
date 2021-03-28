@@ -50,8 +50,8 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
-        String strAge = req.getParameter("age");
+        String name = (String) req.getParameter("name");
+        String strAge = (String) req.getParameter("age");
 
         req.setAttribute("error", req.getParameter("age"));
         int age = Integer.parseInt(strAge);
