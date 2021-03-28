@@ -45,6 +45,7 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<UserModel> users = UserDAO.selectAll();
         req.setAttribute("users", users);
+        req.setAttribute("error", " ");
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 
