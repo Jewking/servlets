@@ -14,6 +14,7 @@ public class UserDAO {
     private static final String SELECT_ALL = "SELECT * from users";
     private static final String DELETE_BY_ID = "DELETE from users where id=?";
     private static final String UPDATE_BY_ID = "UPDATE users set name=?, age=?, status=? where id =?";
+    private static final String UPDATE_RETURN = "UPDATE users set status=true where id=?";
     private static final String DELETE_ALL = "DELETE from users";
 
     public static void insert(UserModel user) {
@@ -60,6 +61,16 @@ public class UserDAO {
             e.printStackTrace();
         }
         return user;
+    }
+
+    public static void updateReturn(Long userId) {
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(UPDATE_RETURN);
+            ps.setLong(1, userId);
+            ps.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public static List<UserModel> search(String sName) {

@@ -24,9 +24,14 @@
 ////    private static CallableStatement callableStatement;
 ////
 //    public static void main(String[] args) {
-//        String name = "Harry";
-//        List<UserModel> users = UserDAO.search(name);
-//        System.out.println(users.toString());
+//        String UPDATE_RETURN = "UPDATE users set status=true where id=?";
+//        try (Connection connection = DBConnection.getConnection()) {
+//            PreparedStatement ps = connection.prepareStatement(UPDATE_RETURN);
+//            ps.setLong(1, 28);
+//            ps.executeQuery();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 //    }
 //
 //    @Override

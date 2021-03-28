@@ -200,10 +200,10 @@ $(document).ready(function(){
 
                         <td><c:choose>
                                 <c:when test="${user.getStatus() == true}">
-                                    <button type="submit" class="btn"><a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a></button>
+                                    <button type="submit" class="btn"><a href="testapp/main?command=Edit&id=${user.getId()}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a></button>
                                 </c:when>
                                 <c:otherwise>
-                                    <button type="submit" class="btn"><a href="#" class="return" title="Return" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a></button>
+                                    <button type="submit" class="btn"><a href="testapp/main?command=Return&id=${user.getId()}" class="return" title="Return" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a></button>
                                 </c:otherwise>
                             </c:choose>
                         </td>
