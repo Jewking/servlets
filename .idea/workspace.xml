@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6d5e35c-1067-4e3b-9816-4dcc3485e55a" name="Default Changelist" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/FrontControllerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/FrontCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/IndexCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/UnknownCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/unknow.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/connection/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anderson/connection/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anderson/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anderson/servlets/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,7 +77,7 @@
       <module name="testapp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.anderson.servlets.*" />
+          <option name="PATTERN" value="com.anderson.servlets.commands.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

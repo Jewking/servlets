@@ -4,27 +4,38 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee webapp_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>main-servlet</servlet-name>
-        <servlet-class>com.anderson.servlets.UserServlet</servlet-class>
+        <servlet-name>front-controller</servlet-name>
+        <servlet-class>
+            com.anderson.servlets.FrontControllerServlet
+        </servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>main-servlet</servlet-name>
+        <servlet-name>front-controller</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>jsp-servlet</servlet-name>
-        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
-    </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>main-servlet</servlet-name>-->
+<!--        <servlet-class>com.anderson.servlets.UserServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>main-servlet</servlet-name>-->
+<!--        <url-pattern>/</url-pattern>-->
+<!--    </servlet-mapping>-->
 
-    <servlet-mapping>
-        <servlet-name>jsp-servlet</servlet-name>
-        <url-pattern>*.jsp</url-pattern>
-    </servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>jsp-servlet</servlet-name>-->
+<!--        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>-->
+<!--    </servlet>-->
 
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>jsp-servlet</servlet-name>-->
+<!--        <url-pattern>*.jsp</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <welcome-file-list>-->
+<!--        <welcome-file>index.jsp</welcome-file>-->
+<!--    </welcome-file-list>-->
 
 <!--    <servlet-mapping>-->
 <!--        <servlet-name>default</servlet-name>-->
