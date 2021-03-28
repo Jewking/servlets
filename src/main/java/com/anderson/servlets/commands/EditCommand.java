@@ -7,18 +7,18 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.util.List;
 
-public class ReturnCommand extends FrontCommand {
+public class EditCommand extends FrontCommand {
 
     @Override
     public void execute() throws ServletException, IOException {
         String strId = (String) request.getParameter("id");
         Long id = Long.parseLong(strId);
 
-        UserDAO.updateStatus(id, true);
+        UserModel user = UserDAO.select(id);
 
-        List<UserModel> users = UserDAO.selectAll();
-        request.setAttribute("users", users);
+        request.setAttribute("user", user);
         request.setAttribute("error", null);
-        forward("index");
+        forward("edit");
     }
 }
+

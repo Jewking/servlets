@@ -7,14 +7,14 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.util.List;
 
-public class ReturnCommand extends FrontCommand {
+public class DeleteCommand extends FrontCommand {
 
     @Override
     public void execute() throws ServletException, IOException {
         String strId = (String) request.getParameter("id");
         Long id = Long.parseLong(strId);
 
-        UserDAO.updateStatus(id, true);
+        UserDAO.delete(id);
 
         List<UserModel> users = UserDAO.selectAll();
         request.setAttribute("users", users);

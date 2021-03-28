@@ -149,7 +149,7 @@ $(document).ready(function(){
 </head>
 <body>
 <%
-    List<UserModel> users = (List) request.getAttribute("users");
+    UserModel user = (UserModel) request.getAttribute("users");
     String error = (String) request.getAttribute("error");
 %>
 <div class="container-xl">
@@ -161,9 +161,14 @@ $(document).ready(function(){
                     <div class="col-sm-4">
                         <form id="add_new" method="get" action="testapp/main">
                         <div class="search-box">
-                            <i class="material-icons">&#xE8B6;</i>
-                            <input name="search" type="text" class="form-control" placeholder="Search&hellip;">
-                            <input type="hidden" id="action" name="command" value="Search">
+                            <form id="disable" method="get" action="testapp/main">
+                                <button class="btn btn-danger" value="Disable" name="command">DISABLE USER</button>
+                                <input type="hidden" id="action" name="id" value="${user.getId()}">
+                            </form>
+                            <form id="delete" method="get" action="testapp/main">
+                                <button class="btn btn-warning" value="Delete" name="command">DELETE COMPLETELY</button>
+                                <input type="hidden" id="action" name="id" value="${user.getId()}">
+                            </form>
                         </div>
                         </form>
                     </div>
@@ -175,50 +180,37 @@ $(document).ready(function(){
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Name <i class="fa fa-sort"></i></th>
-                        <th>Age <i class="fa fa-sort"></i></th>
-                        <th>Status <i class="fa fa-sort"></i></th>
-                        <th>Actions</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                        <th>Age</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="user" items="${users}" step="1" varStatus="count">
                     <tr>
-                        <td>${count.count}</td>
+                        <td>${user.getId()}</td>
                         <td>${user.getName()}</td>
+                        <td></td>
                         <td>${user.getAge()}</td>
-                        <td><c:choose>
-                                <c:when test="${user.getStatus() == true}">
-                                    <span class="badge badge-success">Active</span>
-                                </c:when>
-                                <c:otherwise>
-                                    <span class="badge badge-danger">Removed</span>
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-
-                        <td><c:choose>
-                                <c:when test="${user.getStatus() == true}">
-                                    <button type="submit" class="btn"><a href="testapp/main?command=Edit&id=${user.getId()}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a></button>
-                                </c:when>
-                                <c:otherwise>
-                                    <button type="submit" class="btn"><a href="testapp/main?command=Return&id=${user.getId()}" class="return" title="Return" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a></button>
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
+                        <td></td>
                     </tr>
-                </c:forEach>
                     <tr>
-                    <form id="add_new" method="get" action="testapp/main">
                         <td>#</td>
-                        <td><input name="name" required minlength="2" maxlength="24" type="text" class="form-control" placeholder="Name&hellip;"></td>
-                        <td><input name="age" required type="number" min="15" max="55" class="form-control" placeholder="Age&hellip;"></td>
-                        <td><a href="javascript:{}" onclick="document.getElementById('add_new').submit(); return false;" class="create submit" title="Create" data-toggle="tooltip"></a></td>
+                        <form id="edit_name" method="get" action="testapp/main">
+                        <td><input name="name" required minlength="2" maxlength="24" type="text" class="form-control" placeholder="${user.getName()}&hellip;"></td>
                         <td>
-                            <button name="command" value="Add" type="submit" class="btn"><a href="" class="create" data-toggle="tooltip" data-original-title="Create"><i class="material-icons">person_add</i></a></button>
+                            <button type="submit" class="btn btn-success" value="EditName" name="command"><i class="material-icons">save</i> SAVE</button>
+                            <input type="hidden" id="action" name="id" value="${user.getId()}">
                         </td>
-                    </form>
+                        </form>
+                        <form id="edit_age" method="get" action="testapp/main">
+                        <td><input name="age" required type="number" min="15" max="55" class="form-control" placeholder="${user.getAge()}&hellip;"></td>
+                        <td>
+                            <button type="submit" class="btn btn-success" value="EditAge" name="command"><i class="material-icons">save</i> SAVE</button>
+                            <input type="hidden" id="action" name="id" value="${user.getId()}">
+                        </td>
+                        </form>
                     </tr>
                 </tbody>
             </table>

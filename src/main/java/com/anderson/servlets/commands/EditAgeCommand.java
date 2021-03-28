@@ -5,20 +5,24 @@ import com.anderson.model.UserModel;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
-import java.util.List;
 
-public class ReturnCommand extends FrontCommand {
+public class EditAgeCommand extends FrontCommand {
 
     @Override
     public void execute() throws ServletException, IOException {
         String strId = (String) request.getParameter("id");
+        String strAge = (String) request.getParameter("age");
+
         Long id = Long.parseLong(strId);
+        int age = Integer.parseInt(strAge);
 
-        UserDAO.updateStatus(id, true);
+        UserDAO.updateAge(id, age);
 
-        List<UserModel> users = UserDAO.selectAll();
-        request.setAttribute("users", users);
+        UserModel user = UserDAO.select(id);
+        request.setAttribute("user", user);
         request.setAttribute("error", null);
-        forward("index");
+        forward("edit");
     }
 }
+
+

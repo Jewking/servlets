@@ -13,8 +13,9 @@ public class UserDAO {
     private static final String SELECT_USER_BY_NAME = "SELECT name,age,status FROM users WHERE name=?";
     private static final String SELECT_ALL = "SELECT * from users";
     private static final String DELETE_BY_ID = "DELETE from users where id=?";
-    private static final String UPDATE_BY_ID = "UPDATE users set name=?, age=?, status=? where id =?";
-    private static final String UPDATE_RETURN = "UPDATE users set status=true where id=?";
+    private static final String UPDATE_AGE_BY_ID = "UPDATE users set age=? where id =?";
+    private static final String UPDATE_NAME_BY_ID = "UPDATE users set name=? where id =?";
+    private static final String UPDATE_STATUS = "UPDATE users set status=? where id=?";
     private static final String DELETE_ALL = "DELETE from users";
 
     public static void insert(UserModel user) {
@@ -63,10 +64,11 @@ public class UserDAO {
         return user;
     }
 
-    public static void updateReturn(Long userId) {
+    public static void updateStatus(Long userId, boolean status) {
         try (Connection connection = DBConnection.getConnection()) {
-            PreparedStatement ps = connection.prepareStatement(UPDATE_RETURN);
-            ps.setLong(1, userId);
+            PreparedStatement ps = connection.prepareStatement(UPDATE_STATUS);
+            ps.setBoolean(1, status);
+            ps.setLong(2, userId);
             ps.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -111,6 +113,38 @@ public class UserDAO {
         }
 
         return listUsers;
+    }
+
+    public static void delete(Long userId) {
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(DELETE_BY_ID);
+            ps.setLong(1, userId);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void updateName(Long userId, String name) {
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(UPDATE_NAME_BY_ID);
+            ps.setString(1, name);
+            ps.setLong(2, userId);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void updateAge(Long userId, int age) {
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(UPDATE_AGE_BY_ID);
+            ps.setInt(1, age);
+            ps.setLong(2, userId);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public static boolean isDeletedById(Long userId) {
