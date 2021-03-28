@@ -162,7 +162,7 @@ $(document).ready(function(){
                         <form id="add_new" method="get" value="Search" name="command">
                         <div class="search-box">
                             <i class="material-icons">&#xE8B6;</i>
-                            <input name="command=Search&search" type="text" class="form-control" placeholder="Search&hellip;">
+                            <input name="search" type="text" class="form-control" placeholder="Search&hellip;">
                         </div>
                         </form>
                     </div>
@@ -209,13 +209,13 @@ $(document).ready(function(){
                     </tr>
                 </c:forEach>
                     <tr>
-                    <form id="add_new" method="get" value="Add" name="command">
+                    <form id="add_new" method="get" action="/main">
                         <td>#</td>
                         <td><input name="name" required minlength="2" maxlength="24" type="text" class="form-control" placeholder="Name&hellip;"></td>
                         <td><input name="age" required type="number" min="15" max="55" class="form-control" placeholder="Age&hellip;"></td>
                         <td><a href="javascript:{}" onclick="document.getElementById('add_new').submit(); return false;" class="create submit" title="Create" data-toggle="tooltip"></a></td>
                         <td>
-                            <button type="submit" class="btn"><a href="" class="create" data-toggle="tooltip" data-original-title="Create"><i class="material-icons">person_add</i></a></button>
+                            <button name="command" value="Add" type="submit" class="btn"><a href="" class="create" data-toggle="tooltip" data-original-title="Create"><i class="material-icons">person_add</i></a></button>
                         </td>
                     <form
                     </tr>
