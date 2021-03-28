@@ -18,8 +18,8 @@ public abstract class FrontCommand {
         this.response = servletResponse;
     }
 
-    public abstract void executeGet() throws ServletException, IOException;
-    public abstract void executePost() throws ServletException, IOException;
+    public abstract void execute() throws ServletException, IOException;
+//    public abstract void executePost() throws ServletException, IOException;
 
     protected void forward(String target) throws ServletException, IOException {
         target = String.format("/%s.jsp", target);
