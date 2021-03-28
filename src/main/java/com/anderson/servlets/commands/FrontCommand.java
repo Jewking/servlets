@@ -19,7 +19,6 @@ public abstract class FrontCommand {
     }
 
     public abstract void execute() throws ServletException, IOException;
-//    public abstract void executePost() throws ServletException, IOException;
 
     protected void forward(String target) throws ServletException, IOException {
         target = String.format("/WEB-INF/jsp/%s.jsp", target);
