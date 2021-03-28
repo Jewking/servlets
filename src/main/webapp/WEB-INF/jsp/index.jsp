@@ -157,9 +157,9 @@ $(document).ready(function(){
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><a href="/main?command=Index"><h2>Home <b>Work</b></h2></a></div>
+                    <div class="col-sm-8"><a href="/testapp/main?command=Index"><h2>Home <b>Work</b></h2></a></div>
                     <div class="col-sm-4">
-                        <form id="add_new" method="get" action="/main">
+                        <form id="add_new" method="get" action="testapp/main">
                         <div class="search-box">
                             <i class="material-icons">&#xE8B6;</i>
                             <input name="search" type="text" class="form-control" placeholder="Search&hellip;">
@@ -200,17 +200,17 @@ $(document).ready(function(){
 
                         <td><c:choose>
                                 <c:when test="${user.getStatus() == true}">
-                                    <button type="submit" class="btn"><a href="/main?command=Edit&id=${user.getId()}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a></button>
+                                    <button type="submit" class="btn"><a href="testapp/main?command=Edit&id=${user.getId()}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a></button>
                                 </c:when>
                                 <c:otherwise>
-                                    <button type="submit" class="btn"><a href="/main?command=Return&id=${user.getId()}" class="return" title="Return" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a></button>
+                                    <button type="submit" class="btn"><a href="testapp/main?command=Return&id=${user.getId()}" class="return" title="Return" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a></button>
                                 </c:otherwise>
                             </c:choose>
                         </td>
                     </tr>
                 </c:forEach>
                     <tr>
-                    <form id="add_new" method="get" action="/main">
+                    <form id="add_new" method="get" action="testapp/main">
                         <td>#</td>
                         <td><input name="name" required minlength="2" maxlength="24" type="text" class="form-control" placeholder="Name&hellip;"></td>
                         <td><input name="age" required type="number" min="15" max="55" class="form-control" placeholder="Age&hellip;"></td>

@@ -161,10 +161,6 @@ $(document).ready(function(){
                     <div class="col-sm-4">
                         <form id="add_new" method="get" action="testapp/main">
                         <div class="search-box">
-                            <form id="disable" method="get" action="testapp/main">
-                                <button class="btn btn-danger" value="Disable" name="command">DISABLE USER</button>
-                                <input type="hidden" id="action" name="id" value="${user.getId()}">
-                            </form>
                             <form id="delete" method="get" action="testapp/main">
                                 <button class="btn btn-warning" value="Delete" name="command">DELETE COMPLETELY</button>
                                 <input type="hidden" id="action" name="id" value="${user.getId()}">
@@ -193,7 +189,10 @@ $(document).ready(function(){
                         <td>${user.getName()}</td>
                         <td></td>
                         <td>${user.getAge()}</td>
-                        <td></td>
+                        <td><form id="disable" method="get" action="testapp/main">
+                            <button class="btn btn-danger" value="Disable" name="command">DISABLE</button>
+                            <input type="hidden" id="action" name="id" value="${user.getId()}">
+                        </form></td>
                     </tr>
                     <tr>
                         <td>#</td>
