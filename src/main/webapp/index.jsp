@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.anderson.servlets.User" %>
+<%@ page import="com.anderson.model.UserModel" %>
+<%@ page import="com.anderson.servlets.UserServlet" %>
 
 <!DOCTYPE html>
 <html lang="en">
