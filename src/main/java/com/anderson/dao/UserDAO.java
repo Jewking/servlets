@@ -10,6 +10,7 @@ import java.util.List;
 public class UserDAO {
     private static final String INSERT = "INSERT INTO users (name,age,status) VALUES (?,?,?)";
     private static final String SELECT_USER_BY_ID = "SELECT name,age,status FROM users WHERE id=?";
+    private static final String SELECT_USER_BY_NAME = "SELECT name,age,status FROM users WHERE name=?";
     private static final String SELECT_ALL = "SELECT * from users";
     private static final String DELETE_BY_ID = "DELETE from users where id=?";
     private static final String UPDATE_BY_ID = "UPDATE users set name=?, age=?, status=? where id =?";
@@ -59,6 +60,27 @@ public class UserDAO {
             e.printStackTrace();
         }
         return user;
+    }
+
+    public static List<UserModel> search(String sName) {
+        List<UserModel> listUsers = new ArrayList<>();
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(SELECT_USER_BY_NAME);
+            ps.setString(1, sName);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Long userId = rs.getLong("id");
+                String name = rs.getString("name");
+                int age = rs.getInt("age");
+                boolean status = rs.getBoolean("status");
+                listUsers.add(new UserModel(userId, name, age, status));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listUsers;
     }
 
     public static List<UserModel> selectAll() {
