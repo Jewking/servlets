@@ -14,13 +14,13 @@ import java.io.IOException;
 public class FrontControllerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter writer = response.getWriter();
-        String cmd = request.getParameter("command");
-        try {
-            writer.println("<h2>COMMAND: " + cmd + "</h2><br><p>response: " + response + "  </p>");
-        } finally {
-            writer.close();
-        }
+//        PrintWriter writer = response.getWriter();
+//        String cmd = request.getParameter("command");
+//        try {
+//            writer.println("<h2>COMMAND: " + cmd + "</h2><br><p>response: " + response + "  </p>");
+//        } finally {
+//            writer.close();
+//        }
         FrontCommand command = getCommand(request);
         command.init(getServletContext(), request, response);
         command.execute();
