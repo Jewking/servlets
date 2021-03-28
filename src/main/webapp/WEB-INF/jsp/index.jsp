@@ -162,7 +162,7 @@ $(document).ready(function(){
                         <form id="add_new" method="get" value="Search" name="command">
                         <div class="search-box">
                             <i class="material-icons">&#xE8B6;</i>
-                            <input name="search" type="text" class="form-control" placeholder="Search&hellip;">
+                            <input name="command=Search&search" type="text" class="form-control" placeholder="Search&hellip;">
                         </div>
                         </form>
                     </div>
