@@ -51,19 +51,14 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
+        String strAge = req.getParameter("age");
+
         req.setAttribute("error", req.getParameter("age"));
-//        int age = 0;
-//        try {
-//            age = Integer.parseInt(req.getParameter("age"));
-//            UserDAO.insert(new UserModel(name, age, true));
-//        } catch (Exception e) {
-////            req.setAttribute("error", "Incorrect age");
-//        } finally {
+        int age = Integer.parseInt(strAge);
 
         List<UserModel> users = UserDAO.selectAll();
         req.setAttribute("users", users);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
-//        }
     }
 }
 
