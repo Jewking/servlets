@@ -23,7 +23,21 @@ public class UserServlet extends HttpServlet {
 //    private static CallableStatement callableStatement;
 //
 //    public static void main(String[] args) {
-
+//        List<UserModel> users = new ArrayList<>();
+//        try (Connection connection = DBConnection.getConnection(); PreparedStatement ps = connection.prepareStatement("SELECT * from users")) {
+//            ResultSet rs = ps.executeQuery();
+//
+//            while (rs.next()) {
+//                Long id = rs.getLong("id");
+//                String name = rs.getString("name");
+//                int age = rs.getInt("age");
+//                boolean status = rs.getBoolean("status");
+//                users.add(new UserModel(name, age, status));
+//            }
+//            System.out.println(users.toString());
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 //    }
 
     @Override
