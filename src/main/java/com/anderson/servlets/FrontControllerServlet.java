@@ -2,8 +2,8 @@ package com.anderson.servlets;
 
 import java.io.PrintWriter;
 
-//import com.anderson.servlets.commands.FrontCommand;
-//import com.anderson.servlets.commands.UnknownCommand;
+import com.anderson.servlets.commands.FrontCommand;
+import com.anderson.servlets.commands.UnknownCommand;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,9 +21,9 @@ public class FrontControllerServlet extends HttpServlet {
         } finally {
             writer.close();
         }
-//        FrontCommand command = getCommand(request);
-//        command.init(getServletContext(), request, response);
-//        command.execute();
+        FrontCommand command = getCommand(request);
+        command.init(getServletContext(), request, response);
+        command.execute();
     }
 
 //    @Override
@@ -33,13 +33,12 @@ public class FrontControllerServlet extends HttpServlet {
 //        command.executePost();
 //    }
 
-//    private FrontCommand getCommand(HttpServletRequest request) {
-//        try {
-//            Class type = Class.forName(String.format("com.anderson.servlets.commands.%sCommand", request.getParameter("command")));
-//            request.setAttribute("error", request.getParameter("command"));
-//            return (FrontCommand) type.asSubclass(FrontCommand.class).newInstance();
-//        } catch (Exception e) {
-//            return new UnknownCommand();
-//        }
-//    }
+    private FrontCommand getCommand(HttpServletRequest request) {
+        try {
+            Class type = Class.forName(String.format("com.anderson.servlets.commands.%sCommand", request.getParameter("command")));
+            return (FrontCommand) type.asSubclass(FrontCommand.class).newInstance();
+        } catch (Exception e) {
+            return new UnknownCommand();
+        }
+    }
 }
