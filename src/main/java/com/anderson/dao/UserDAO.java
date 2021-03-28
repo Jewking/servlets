@@ -27,7 +27,7 @@ public class UserDAO {
 
                 final ResultSet rs = ps.getGeneratedKeys();
                 rs.next();
-                user.setId(rs.getLong("user_table_id"));
+                user.setId(rs.getLong("id"));
                 rs.close();
 
                 connection.commit();
