@@ -56,7 +56,7 @@ public class UserServlet extends HttpServlet {
             age = Integer.parseInt(req.getParameter("age"));
             UserDAO.insert(new UserModel(name, age, true));
         } catch (Exception e) {
-            req.setAttribute("error", "Incorrect age!");
+            req.setAttribute("error", "Incorrect age");
         } finally {
             List<UserModel> users = UserDAO.selectAll();
             req.setAttribute("users", users);
