@@ -163,7 +163,7 @@ $(document).ready(function(){
                         <div class="search-box">
                             <i class="material-icons">&#xE8B6;</i>
                             <input name="search" type="text" class="form-control" placeholder="Search&hellip;">
-                            <input type="hidden" id="action" name="command" value="Search">
+                            <input type="hidden" id="add_new" name="command" value="Search">
                         </div>
                         </form>
                     </div>
@@ -200,10 +200,16 @@ $(document).ready(function(){
 
                         <td><c:choose>
                                 <c:when test="${user.getStatus() == true}">
-                                    <button type="submit" class="btn"><a href="testapp/main?command=Edit&id=${user.getId()}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a></button>
+                                    <form id="go_edit" method="get" action="">
+                                        <button type="submit" class="btn">
+                                            <a href="" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a>
+                                        </button>
+                                        <input type="hidden" id="go_edit" name="command" value="Edit">
+                                        <input type="hidden" id="go_edit" name="id" value="${user.getId()}">
+                                    </form>
                                 </c:when>
                                 <c:otherwise>
-                                    <button type="submit" class="btn"><a href="testapp/main?command=Return&id=${user.getId()}" class="return" title="Return" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a></button>
+                                    <button type="submit" class="btn"><a href="/testapp/main?command=Return&id=${user.getId()}" class="return" title="Return" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a></button>
                                 </c:otherwise>
                             </c:choose>
                         </td>
