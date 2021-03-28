@@ -2,32 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6d5e35c-1067-4e3b-9816-4dcc3485e55a" name="Default Changelist" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/UsersRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/WebConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/GetApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/UserServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/FrontCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/FrontCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/connection/DBConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/dao/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/model/UserModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/FrontControllerServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/UserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/commands/AddCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/commands/DeleteCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/commands/DisableCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/commands/EditAgeCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/commands/EditCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/commands/EditNameCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/commands/FrontCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/commands/IndexCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/commands/ReturnCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/commands/SearchCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/servlets/commands/UnknownCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/learned-dahlia-308914-b965d2b978c6.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
