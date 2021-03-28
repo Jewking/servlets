@@ -159,7 +159,7 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-sm-8"><a href="/testapp/main?command=Index"><h2>Home <b>Work</b></h2></a></div>
                     <div class="col-sm-4">
-                        <form id="add_new" method="get" action="testapp/main">
+                        <form id="add_new" method="get" action="">
                         <div class="search-box">
                             <form id="delete" method="get" action="testapp/main">
                                 <button class="btn btn-warning" value="Delete" name="command">DELETE COMPLETELY</button>
@@ -189,21 +189,21 @@ $(document).ready(function(){
                         <td>${user.getName()}</td>
                         <td></td>
                         <td>${user.getAge()}</td>
-                        <td><form id="disable" method="get" action="testapp/main">
+                        <td><form id="disable" method="get" action="">
                             <button class="btn btn-danger" value="Disable" name="command">DISABLE</button>
                             <input type="hidden" id="action" name="id" value="${user.getId()}">
                         </form></td>
                     </tr>
                     <tr>
                         <td>#</td>
-                        <form id="edit_name" method="get" action="testapp/main">
+                        <form id="edit_name" method="get" action="">
                         <td><input name="name" required minlength="2" maxlength="24" type="text" class="form-control" placeholder="${user.getName()}&hellip;"></td>
                         <td>
                             <button type="submit" class="btn btn-success" value="EditName" name="command"><i class="material-icons">save</i> SAVE</button>
                             <input type="hidden" id="action" name="id" value="${user.getId()}">
                         </td>
                         </form>
-                        <form id="edit_age" method="get" action="testapp/main">
+                        <form id="edit_age" method="get" action="">
                         <td><input name="age" required type="number" min="15" max="55" class="form-control" placeholder="${user.getAge()}&hellip;"></td>
                         <td>
                             <button type="submit" class="btn btn-success" value="EditAge" name="command"><i class="material-icons">save</i> SAVE</button>

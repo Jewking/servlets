@@ -159,7 +159,7 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-sm-8"><a href="/testapp/main?command=Index"><h2>Home <b>Work</b></h2></a></div>
                     <div class="col-sm-4">
-                        <form id="add_new" method="get" action="testapp/main">
+                        <form id="add_new" method="get" action="">
                         <div class="search-box">
                             <i class="material-icons">&#xE8B6;</i>
                             <input name="search" type="text" class="form-control" placeholder="Search&hellip;">
@@ -210,7 +210,7 @@ $(document).ready(function(){
                     </tr>
                 </c:forEach>
                     <tr>
-                    <form id="add_new" method="get" action="testapp/main">
+                    <form id="add_new" method="get" action="">
                         <td>#</td>
                         <td><input name="name" required minlength="2" maxlength="24" type="text" class="form-control" placeholder="Name&hellip;"></td>
                         <td><input name="age" required type="number" min="15" max="55" class="form-control" placeholder="Age&hellip;"></td>
