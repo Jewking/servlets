@@ -149,7 +149,7 @@ $(document).ready(function(){
 </head>
 <body>
 <%
-    UserModel user = (UserModel) request.getAttribute("users");
+    UserModel user = (UserModel) request.getAttribute("user");
     String error = (String) request.getAttribute("error");
 %>
 <div class="container-xl">
