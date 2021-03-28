@@ -17,6 +17,7 @@ public class DBConnection {
         config.setJdbcUrl("jdbc:postgresql://192.168.0.106:5432/postgres");
         config.setUsername("postgres");
         config.setPassword("123123");
+        config.setMaximumPoolSize(10);
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
