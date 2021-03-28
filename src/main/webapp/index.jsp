@@ -150,7 +150,7 @@ $(document).ready(function(){
 </head>
 <body>
 <%
-    List<User> users = (List) request.getAttribute("users");
+    List<UserModelr> users = (List) request.getAttribute("users");
     String error = (String) request.getAttribute("error");
 %>
 <div class="container-xl">
