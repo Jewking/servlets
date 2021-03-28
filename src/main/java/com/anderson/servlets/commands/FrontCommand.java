@@ -22,7 +22,7 @@ public abstract class FrontCommand {
 //    public abstract void executePost() throws ServletException, IOException;
 
     protected void forward(String target) throws ServletException, IOException {
-        target = String.format("/%s.jsp", target);
+        target = String.format("/WEB-INF/jsp/%s.jsp", target);
         RequestDispatcher dispatcher = context.getRequestDispatcher(target);
         dispatcher.forward(request, response);
     }
