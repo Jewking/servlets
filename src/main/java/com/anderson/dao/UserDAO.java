@@ -148,7 +148,7 @@ public class UserDAO {
         }
     }
 
-    public static boolean isDeletedById(Long userId) {
+    public static boolean wasDeletedById(Long userId) {
         boolean isRowDeleted = false;
         try (Connection connection = DBConnection.getConnection()) {
             PreparedStatement ps = connection.prepareStatement(DELETE_BY_ID);
@@ -159,20 +159,6 @@ public class UserDAO {
         }
         return isRowDeleted;
     }
-
-//    public boolean isUpdatedById(UserModel userTableModel) {
-//        boolean isRowUpdated = false;
-//        try (Connection connection = DBConnection.getConnection(); PreparedStatement ps = connection.prepareStatement(UPDATE_BY_ID)) {
-//            ps.setString(1, userTableModel.getName());
-//            ps.setString(2, userTableModel.getAge());
-//            ps.setString(3, userTableModel.getStatus());
-//            ps.setInt(4, userTableModel.getUserTableId());
-//            isRowUpdated = ps.executeUpdate() > 0;
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return isRowUpdated;
-//    }
 
     public static void deleteAll() {
         try (Connection connection = DBConnection.getConnection()) {
