@@ -1,6 +1,7 @@
 package com.anderson.servlets;
 
 import com.anderson.connection.DBConnection;
+import com.anderson.dao.UserDAO;
 import com.anderson.model.UserModel;
 
 import javax.servlet.ServletException;
@@ -42,47 +43,22 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<UserModel> users = new ArrayList<>();
-        try (Connection connection = DBConnection.getConnection(); PreparedStatement ps = connection.prepareStatement("SELECT * from users")) {
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                Long id = rs.getLong("id");
-                String name = rs.getString("name");
-                int age = rs.getInt("age");
-                boolean status = rs.getBoolean("status");
-                users.add(new UserModel(name, age, status));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
+        List<UserModel> users = UserDAO.selectAll();
         req.setAttribute("users", users);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ArrayList<UserModel> users = new ArrayList<UserModel> (Arrays.asList(
-                    new UserModel("John First", 15, true),
-                    new UserModel("Bob Second", 25, false),
-                    new UserModel("Martin Third", 19, true)
-                ));
-
         String name = req.getParameter("name");
-        if (name.isEmpty()) {
-            req.setAttribute("error", "Incorrect name!");
-            req.setAttribute("users", users);
-            req.getRequestDispatcher("/index.jsp").forward(req, resp);
-            return;
-        }
         int age = 0;
         try {
             age = Integer.parseInt(req.getParameter("age"));
-            users.add(new UserModel(name, age, true));
+            UserDAO.insert(new UserModel(name, age, true));
         } catch (Exception e) {
             req.setAttribute("error", "Incorrect age!");
         } finally {
+            List<UserModel> users = UserDAO.selectAll();
             req.setAttribute("users", users);
             req.getRequestDispatcher("/index.jsp").forward(req, resp);
         }

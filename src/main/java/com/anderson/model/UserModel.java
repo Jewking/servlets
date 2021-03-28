@@ -12,6 +12,13 @@ public class UserModel {
         this.status = status;
     }
 
+    public UserModel(Long id, String name, int age, boolean status) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.status = status;
+    }
+
     public String getName() {
         return name;
     }
