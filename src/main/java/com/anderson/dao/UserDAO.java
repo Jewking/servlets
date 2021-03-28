@@ -16,8 +16,8 @@ public class UserDAO {
     private static final String DELETE_ALL = "DELETE from users";
 
     public static void insert(UserModel user) {
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement ps = connection.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS)) {
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
             connection.setAutoCommit(false);
             try {
                 ps.setString(1, user.getName());
@@ -42,16 +42,18 @@ public class UserDAO {
         }
     }
 
-    public static UserModel select(Long userid) {
+    public static UserModel select(Long userId) {
         UserModel user = new UserModel("null", 0, false);
-        try (Connection connection = DBConnection.getConnection(); PreparedStatement ps = connection.prepareStatement(SELECT_USER_BY_ID)) {
-            ps.setLong(1, userid);
+
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(SELECT_USER_BY_ID);
+            ps.setLong(1, userId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 String name = rs.getString("name");
                 int age = rs.getInt("age");
                 boolean status = rs.getBoolean("status");
-                user = new UserModel(userid, name, age, status);
+                user = new UserModel(userId, name, age, status);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -61,7 +63,8 @@ public class UserDAO {
 
     public static List<UserModel> selectAll() {
         List<UserModel> listUsers = new ArrayList<>();
-        try (Connection connection = DBConnection.getConnection(); PreparedStatement ps = connection.prepareStatement(SELECT_ALL)) {
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(SELECT_ALL);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -80,7 +83,8 @@ public class UserDAO {
 
     public static boolean isDeletedById(Long userId) {
         boolean isRowDeleted = false;
-        try (Connection connection = DBConnection.getConnection(); PreparedStatement ps = connection.prepareStatement(DELETE_BY_ID)) {
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(DELETE_BY_ID);
             ps.setLong(1, userId);
             isRowDeleted = ps.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -104,7 +108,8 @@ public class UserDAO {
 //    }
 
     public static void deleteAll() {
-        try (Connection connection = DBConnection.getConnection(); PreparedStatement ps = connection.prepareStatement(DELETE_ALL)) {
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(DELETE_ALL);
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
