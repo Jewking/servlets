@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6d5e35c-1067-4e3b-9816-4dcc3485e55a" name="Default Changelist" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/src/test/java/UserModelDAOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/UsersRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/UsersRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/GetApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/GetApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/NotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/controllers/WebConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
