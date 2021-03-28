@@ -157,7 +157,7 @@ $(document).ready(function(){
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><h2>Home <b>Work</b></h2></div>
+                    <a href="/testapp/main?command=Index"><h2>Home <b>Work</b></h2></a>
                     <div class="col-sm-4">
                         <form id="add_new" method="get" action="testapp/main">
                         <div class="search-box">
