@@ -198,7 +198,6 @@ $(document).ready(function(){
                         <td><c:choose>
                                 <c:when test="${user.getStatus() == true}">
                                     <button type="submit" class="btn"><a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">settings</i></a></button>
-                                    <!-- <button type="submit" class="btn"><a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></button> -->
                                 </c:when>
                                 <c:otherwise>
                                     <button type="submit" class="btn"><a href="#" class="return" title="Return" data-toggle="tooltip"><i class="material-icons">rotate_right</i></a></button>
