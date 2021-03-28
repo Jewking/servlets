@@ -23,6 +23,12 @@ class UsersRestController {
         return UserDAO.select(id);
     }
 
+    @DeleteMapping("user/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        UserDAO.delete(id);
+    }
+
+
 //    @PostMapping("new/user")
 //    public boolean add(@RequestBody String name, ) {
 //        return users.add(new Users(name));
@@ -34,9 +40,4 @@ class UsersRestController {
         userFound.setName(name);
         return userFound;
     }*/
-
-    @DeleteMapping("user/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        UserDAO.delete(id);
-    }
 }
