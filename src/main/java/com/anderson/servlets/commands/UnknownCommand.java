@@ -8,9 +8,4 @@ public class UnknownCommand extends FrontCommand {
     public void execute() throws ServletException, IOException {
         forward("unknown");
     }
-
-//    @Override
-//    public void executePost() throws ServletException, IOException {
-//        forward("unknown");
-//    }
 }

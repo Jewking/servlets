@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class SearchCommand extends FrontCommand {
-
     @Override
     public void execute() throws ServletException, IOException {
         String name = (String) request.getParameter("search");

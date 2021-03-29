@@ -3,7 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="a6d5e35c-1067-4e3b-9816-4dcc3485e55a" name="Default Changelist" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/DeleteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/DeleteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/DisableCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/DisableCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/EditAgeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/EditAgeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/EditCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/EditCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/EditNameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/EditNameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/FrontCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/FrontCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/IndexCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/IndexCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/ReturnCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/ReturnCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/SearchCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/SearchCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/SortByAgeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/SortByAgeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/SortByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/SortByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/SortByNameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/SortByNameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/SortByStatusCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/SortByStatusCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/UnknownCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anderson/servlets/commands/UnknownCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserModelDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/anderson/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anderson/dao/UserDAO.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,8 +148,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.GetApplication" />
-      <item itemvalue="JUnit.UserTableDAOTest" />
       <item itemvalue="JAR Application.testapp-1.0-SNAPSHOT.jar" />
+      <item itemvalue="JUnit.UserTableDAOTest" />
     </list>
     <recent_temporary>
       <list>

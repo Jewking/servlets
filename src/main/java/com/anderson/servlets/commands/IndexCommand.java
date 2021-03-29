@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class IndexCommand extends FrontCommand {
-
     @Override
     public void execute() throws ServletException, IOException {
         List<UserModel> users = UserDAO.selectAll();
