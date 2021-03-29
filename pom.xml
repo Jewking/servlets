@@ -14,7 +14,7 @@
     <groupId>com.anderson.testapp</groupId>
     <artifactId>testapp</artifactId>
     <version>1.0-SNAPSHOT</version>
-<!--    <packaging>war</packaging>-->
+    <packaging>war</packaging>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
