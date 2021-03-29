@@ -10,7 +10,7 @@
 </head>
 <body>
 <%
-    String redirectURL = "/testapp/main?command=Index";
+    String redirectURL = "/testapp/main?command=Home";
     response.sendRedirect(redirectURL);
 %>
 </body>

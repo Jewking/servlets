@@ -7,7 +7,7 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.util.List;
 
-public class IndexCommand extends FrontCommand {
+public class HomeCommand extends FrontCommand {
     @Override
     public void execute() throws ServletException, IOException {
         List<UserModel> users = UserDAO.selectAll();
