@@ -160,7 +160,7 @@ $(document).ready(function(){
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><a href="/testapp/main?command=Index"><h2>Home <b>page</b></h2></a></div>
+                    <div class="col-sm-8"><a href="/testapp/main?command=Home"><h2>Home <b>page</b></h2></a></div>
                     <div class="col-sm-4">
                         <form id="add_new" method="get" action="">
                         <div class="search-box">
