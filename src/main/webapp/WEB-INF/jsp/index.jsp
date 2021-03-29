@@ -179,10 +179,10 @@ $(document).ready(function(){
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name <i class="fa fa-sort"></i></th>
-                        <th>Age <i class="fa fa-sort"></i></th>
-                        <th>Status <i class="fa fa-sort"></i></th>
-                        <th>ID <i class="fa fa-sort"></i></th>
+                        <th>Name <a href="/testapp/main?command=SortByName"><i class="fa fa-sort"></i></a></th>
+                        <th>Age <a href="/testapp/main?command=SortByAge"><i class="fa fa-sort"></i></a></th>
+                        <th>Status <a href="/testapp/main?command=SortByStatus"><i class="fa fa-sort"></i></a></th>
+                        <th>ID <a href="/testapp/main?command=SortById"><i class="fa fa-sort"></i></a></th>
                         <th>Actions</th>
                     </tr>
                 </thead>

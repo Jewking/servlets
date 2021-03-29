@@ -12,6 +12,11 @@ public class UserDAO {
     private static final String SELECT_USER_BY_ID = "SELECT name,age,status FROM users WHERE id=?";
     private static final String SELECT_USER_BY_NAME = "SELECT id,name,age,status FROM users WHERE name=?";
     private static final String SELECT_ALL = "SELECT * from users";
+    private static final String SELECT_ALL_BY_NAME = "SELECT * from users ORDER BY name";
+    private static final String SELECT_ALL_BY_AGE = "SELECT * from users ORDER BY age";
+    private static final String SELECT_ALL_BY_STATUS = "SELECT * from users ORDER BY status";
+    private static final String SELECT_ALL_BY_ID = "SELECT * from users ORDER BY id";
+
     private static final String DELETE_BY_ID = "DELETE from users where id=?";
     private static final String UPDATE_AGE_BY_ID = "UPDATE users set age=? where id =?";
     private static final String UPDATE_NAME_BY_ID = "UPDATE users set name=? where id =?";
@@ -100,6 +105,86 @@ public class UserDAO {
         List<UserModel> listUsers = new ArrayList<>();
         try (Connection connection = DBConnection.getConnection()) {
             PreparedStatement ps = connection.prepareStatement(SELECT_ALL);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Long userId = rs.getLong("id");
+                String name = rs.getString("name");
+                int age = rs.getInt("age");
+                boolean status = rs.getBoolean("status");
+                listUsers.add(new UserModel(userId, name, age, status));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listUsers;
+    }
+
+    public static List<UserModel> selectAllbyName() {
+        List<UserModel> listUsers = new ArrayList<>();
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(SELECT_ALL_BY_NAME);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Long userId = rs.getLong("id");
+                String name = rs.getString("name");
+                int age = rs.getInt("age");
+                boolean status = rs.getBoolean("status");
+                listUsers.add(new UserModel(userId, name, age, status));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listUsers;
+    }
+
+    public static List<UserModel> selectAllbyAge() {
+        List<UserModel> listUsers = new ArrayList<>();
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(SELECT_ALL_BY_AGE);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Long userId = rs.getLong("id");
+                String name = rs.getString("name");
+                int age = rs.getInt("age");
+                boolean status = rs.getBoolean("status");
+                listUsers.add(new UserModel(userId, name, age, status));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listUsers;
+    }
+
+    public static List<UserModel> selectAllbyStatus() {
+        List<UserModel> listUsers = new ArrayList<>();
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(SELECT_ALL_BY_STATUS);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Long userId = rs.getLong("id");
+                String name = rs.getString("name");
+                int age = rs.getInt("age");
+                boolean status = rs.getBoolean("status");
+                listUsers.add(new UserModel(userId, name, age, status));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listUsers;
+    }
+
+    public static List<UserModel> selectAllbyID() {
+        List<UserModel> listUsers = new ArrayList<>();
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(SELECT_ALL_BY_ID);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
