@@ -214,7 +214,7 @@ $(document).ready(function(){
                 </tbody>
             </table>
             <div class="clearfix">
-                <a href="/api/users" class="link hint-text"><i class="material-icons">rss_feed</i> USER <b>API</b></a>
+                <a href="http://localhost:8090/testapp/api/users" class="link hint-text"><i class="material-icons">rss_feed</i> USER <b>API</b></a>
                 <ul class="pagination"><div class="hint-text">by <b>Leonid Rakitin</b></div></ul>
             </div>
         </div>
